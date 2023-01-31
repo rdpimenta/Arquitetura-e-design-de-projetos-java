@@ -18,4 +18,20 @@ public class Aluno {
     public void adicionarTelefone(String ddd, String numero) {
         this.telefones.add(new Telefone(ddd, numero));
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getCpf() {
+        return cpf.getNumero();
+    }
+
+    public String getEmail() {
+        return email.getEndereco();
+    }
+
+    public List<Telefone> getTelefones() {
+        return telefones;
+    }
 }
