@@ -1,5 +1,6 @@
 package br.com.alura.escola.aplicacao.aluno.matricular;
 
+import br.com.alura.escola.dominio.PublicadorDeEventos;
 import br.com.alura.escola.dominio.aluno.Aluno;
 import br.com.alura.escola.dominio.aluno.CPF;
 import br.com.alura.escola.dominio.aluno.RepositorioDeAlunos;
@@ -11,7 +12,8 @@ public class MatricularAlunoTest {
     @Test
     void alunoDeveriaSerPersistido() {
         RepositorioDeAlunos repositorioDeAlunos = new RepositorioDeAlunosEmMemoria();
-        MatricularAluno matricularAluno = new MatricularAluno(repositorioDeAlunos);
+        PublicadorDeEventos publicador = new PublicadorDeEventos();
+        MatricularAluno matricularAluno = new MatricularAluno(repositorioDeAlunos, publicador);
         MatricularAlunoDto dados = new MatricularAlunoDto(
                 "Fulano", "123.456.789-10", "email@email.com"
         );
