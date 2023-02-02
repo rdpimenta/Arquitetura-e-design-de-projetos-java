@@ -18,6 +18,9 @@ public class Aluno {
     }
 
     public void adicionarTelefone(String ddd, String numero) {
+        if (telefones.size() == 2) {
+            throw new TelefonesAcimaDoNumeroPermitido();
+        }
         this.telefones.add(new Telefone(ddd, numero));
     }
 
